@@ -18,7 +18,7 @@ def main():
     y_train = train_df["target"]
 
     # ===== CHOOSE MODEL HERE =====
-    MODEL_TYPE = "logreg"  # change to "rf" in second branch
+    MODEL_TYPE = "rf"  # change to "rf" in second branch
 
     if MODEL_TYPE == "logreg":
         model = LogisticRegression(max_iter=1000)
