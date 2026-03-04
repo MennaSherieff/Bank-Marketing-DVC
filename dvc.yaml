@@ -23,8 +23,6 @@ stages:
       - models/model.pkl
       - data/processed/test.csv
     outs:
-      - reports/confusion_matrix.png
-      - reports/roc_curve.png
     metrics:
       - reports/metrics.json
     plots:
