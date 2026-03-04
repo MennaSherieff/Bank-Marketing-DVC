@@ -1,0 +1,29 @@
+stages:
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+      - src/preprocess.py
+      - data/raw/bank.csv
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/processed/train.csv
+    outs:
+      - models/model.pkl
+
+  validate:
+    cmd: python src/validate.py
+    deps:
+      - src/validate.py
+      - models/model.pkl
+      - data/processed/test.csv
+    outs:
+      - reports/confusion_matrix.png
+      - reports/roc_curve.png
+    metrics:
+      - reports/metrics.json
