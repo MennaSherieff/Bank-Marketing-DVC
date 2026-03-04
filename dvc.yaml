@@ -22,7 +22,6 @@ stages:
       - src/validate.py
       - models/model.pkl
       - data/processed/test.csv
-    outs:
     metrics:
       - reports/metrics.json
     plots:
